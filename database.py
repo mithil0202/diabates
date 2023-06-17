@@ -2,6 +2,7 @@ import sqlite3
 conn = sqlite3.connect('patient.db')
 
 cur = conn.cursor()
-cur.execute("CREATE TABLE PATIENT_DETAILS(PATIENT_NAME VARCHAR(30),PATIENT_AGE INT,GENDER VARCHAR(10),DIABETIC VARCHAR(20))")
-cur.execute("INSERT INTO PATIENT_DETAILS VALUES('Mithil',23,'MALE','NEGATIVE')")
+# cur.execute("CREATE TABLE PATIENT_DETAILS(PATIENT_NAME VARCHAR(30),PATIENT_AGE INT,GENDER VARCHAR(10),DIABETIC VARCHAR(20))")
+# cur.execute("INSERT INTO PATIENT_DETAILS VALUES('Mithil',23,'MALE','NEGATIVE')")
+cur.execute(f"delete from PATIENT_DETAILS where diabetic = 'No Diabetic'")
 conn.commit()
